@@ -8,12 +8,13 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CashTest {
-    @Test void cashTest(){
+    @Test
+    void cashTest() {
         String planningDate = DataGenerator.generateDate(4);
         Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
         $("[data-test-id=city] input").setValue("Москва");
-        $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT,Keys.HOME),Keys.BACK_SPACE);
+        $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(planningDate);
         $("[data-test-id=name] input ").setValue("Попов Евгений");
         $("[data-test-id=phone] input ").setValue("+79150034567");
